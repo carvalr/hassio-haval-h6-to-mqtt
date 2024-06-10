@@ -80,7 +80,7 @@ const sensorTopics = {
   2013005: {
   	description: "Estado de Carga 12V",
   	unit: '%',
-    device_class: "battery"
+    device_class: "battery",
   },
   2202001: {
   	description: "Estado do Ar Condicionado", //(1: Ligado 0: Desligado)
@@ -159,7 +159,7 @@ const attributeTopics = {
   	value: 0,
   },
   2310001: {
-  	description: "Autorização do GPS (1: Autorizado 0: Não Autorizado)",
+  	description: "Autorização do GPS", //(1: Autorizado 0: Não Autorizado)
   	unit: "null",
   	value: 1,
   },
