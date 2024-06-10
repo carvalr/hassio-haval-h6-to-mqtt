@@ -114,7 +114,7 @@ if (fs.existsSync("./certs/gwm_root.cer!")) {
 
 validationSchema.validate(process.env)
   .then(() => {
-    console.info('Check MQTT Parameters')
+    console.info('Check MQTT parameters')
     return checkConnection();
   })
   .then(() => {
