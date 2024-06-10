@@ -6,7 +6,6 @@
   "init": false,
   "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
   "url": "https://github.com/carvalr/hassio-haval-h6-to-mqtt",
-  "documentation": "https://github.com/carvalr/hassio-haval-h6-to-mqtt/blob/main/README.md",
   "map": ["config:rw"],
   "options": {
     "data_path": "/config/haval_h6_mqtt",
