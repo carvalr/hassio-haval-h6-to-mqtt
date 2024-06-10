@@ -163,7 +163,7 @@ const updateState = () => getCarInfo()
           }
           
           if (attributeTopics.hasOwnProperty(code)) {
-            attributes[slugify(attributeTopics[code].description.toLowerCase(), "_")] = value;
+            attributes[slugify(attributeTopics[code].description.toLowerCase(), "_")] = String(value);
           }
         });    
         attributes['image'] = storage.getItem('image');
