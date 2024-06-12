@@ -11,7 +11,8 @@
     "data_path": "/config/haval_h6_mqtt",
     "refresh_minutes": 5,
     "mqtt_server": "mqtt://homeassistant.local:1883",
-    "pressure_unit": "psi"
+    "pressure_unit": "psi",
+    "device_tracker_enabled": true
   },
   "schema": {
     "data_path": "str",
@@ -22,6 +23,7 @@
     "mqtt_user": "str",
     "mqtt_pass": "password?",
     "refresh_minutes": "int",
-    "pressure_unit": "list(kPa|psi)"
+    "pressure_unit": "list(kPa|psi)",
+    "device_tracker_enabled": "bool"
   }
 }
