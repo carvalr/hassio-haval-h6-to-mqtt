@@ -77,21 +77,6 @@ const sensorTopics = {
     device_class: "duration",
     entity_type: "sensor",
   },
-  2013023: {
-    description: "Agendamento de Carga",
-    device_class: "None",
-    entity_type: "binary_sensor",
-  },
-  2041142: {
-    description: "Estado da Carga", //(0:Desconectado 1:Carregando 3:Finalizado 5:Aguardando liberação)
-    device_class: "None",
-    entity_type: "sensor",
-  },
-  2042082: {
-    description: "Estado do Controle de Carga", //(1: Conectado 0: Desconectado)
-    device_class: "battery_charging",
-    entity_type: "binary_sensor",
-  },
   2017002: {
     description: "Nível de Combustível",
     unit: "L",
@@ -104,77 +89,108 @@ const sensorTopics = {
     device_class: "battery",
     entity_type: "sensor",
   },
-  2202001: {
-    description: "Estado do Ar Condicionado", //(1: Ligado 0: Desligado)
-    device_class: "cold",
-    entity_type: "binary_sensor",
-  },
-  2202099: {
-    description: "Estado do Purificador de Ar",
+  2041142: {
+    description: "Estado da Carga", //(0:Desconectado 1:Carregando 3:Finalizado 5:Aguardando liberação)
     device_class: "None",
     entity_type: "sensor",
-  },
-  2208001: {
-    description: "Estado da Trava", //(1: Destravar 0: Travar)
-    device_class: "lock",
-    entity_type: "binary_sensor",
-  },
-  2206001: {
-    description: "Porta-Malas", //(1: Aberto 0: Fechado)
-    device_class: "door",
-    entity_type: "binary_sensor",
+    icon: "mdi:ev-station",
   },
   2210005: {
-    description: "Posição do Teto Solar", //(6: Aberto 3: Fechado)
+    description: "Posição do Teto Solar", //(3: Fechado >3 posição do teto solar em %)
     device_class: "None",
     entity_type: "sensor",
-  },
-  2206002: {
-    description: "Porta Dianteira Direita", //(1: Aberta 0: Fechada)
-    device_class: "door",
-    entity_type: "binary_sensor",
-  },
-  2206004: {
-    description: "Porta Dianteira Esquerda", //(1: Aberta 0: Fechada)
-    device_class: "door",
-    entity_type: "binary_sensor",
-  },
-  2206003: {
-    description: "Porta Traseira Direita", //(1: Aberta 0: Fechada)
-    device_class: "door",
-    entity_type: "binary_sensor",
-  },
-  2206005: {
-    description: "Porta Traseira Esquerda", //(1: Aberta 0: Fechada)
-    device_class: "door",
-    entity_type: "binary_sensor",
-  },
+    icon: "mdi:shield-sun",
+  },  
   2210001: {
     description: "Vidro Dianteiro Esquerdo", //(1: Fechado 2: Aberto 3: Entreaberto)
     device_class: "None",
     entity_type: "sensor",
+    icon: "mdi:car-windshield-outline",
   },
   2210002: {
     description: "Vidro Dianteiro Direito", //(1: Fechado 2: Aberto 3: Entreaberto)
     device_class: "None",
     entity_type: "sensor",
+    icon: "mdi:car-windshield-outline",
   },
   2210003: {
     description: "Vidro Traseiro Esquerdo", //(1: Fechado 2: Aberto 3: Entreaberto)
     device_class: "None",
     entity_type: "sensor",
+    icon: "mdi:car-windshield-outline",
   },
   2210004: {
     description: "Vidro Traseiro Direito", //(1: Fechado 2: Aberto 3: Entreaberto)
     device_class: "None",
     entity_type: "sensor",
+    icon: "mdi:car-windshield-outline",
+  },
+  2013023: {
+    description: "Agendamento de Carga",
+    device_class: "None",
+    entity_type: "binary_sensor",
+    icon: "mdi:calendar-clock",
+  },
+  2042082: {
+    description: "Estado do Controle de Carga", //(1: Conectado 0: Desconectado)
+    device_class: "battery_charging",
+    entity_type: "binary_sensor",
+    icon: "mdi:ev-plug-ccs2",
+  },
+  2202001: {
+    description: "Estado do Ar Condicionado", //(1: Ligado 0: Desligado)
+    device_class: "cold",
+    entity_type: "binary_sensor",
+    icon: "mdi:air-conditioner",
+  },
+  2202099: {
+    description: "Estado do Purificador de Ar",
+    device_class: "None",
+    entity_type: "binary_sensor",
+    icon: "mdi:air-filter",
+  },
+  2208001: {
+    description: "Estado da Trava", //(1: Destravar 0: Travar)
+    device_class: "lock",
+    entity_type: "binary_sensor",    
+    icon: "mdi:car-door-lock",
+  },
+  2206001: {
+    description: "Porta-Malas", //(1: Aberto 0: Fechado)
+    device_class: "door",
+    entity_type: "binary_sensor",
+    icon: "mdi:car-back",
+  },
+  2206002: {
+    description: "Porta Dianteira Direita", //(1: Aberta 0: Fechada)
+    device_class: "door",
+    entity_type: "binary_sensor",
+    icon: "mdi:car-door",
+  },
+  2206004: {
+    description: "Porta Dianteira Esquerda", //(1: Aberta 0: Fechada)
+    device_class: "door",
+    entity_type: "binary_sensor",
+    icon: "mdi:car-door",
+  },
+  2206003: {
+    description: "Porta Traseira Direita", //(1: Aberta 0: Fechada)
+    device_class: "door",
+    entity_type: "binary_sensor",
+    icon: "mdi:car-door",
+  },
+  2206005: {
+    description: "Porta Traseira Esquerda", //(1: Aberta 0: Fechada)
+    device_class: "door",
+    entity_type: "binary_sensor",
+    icon: "mdi:car-door",
   },
 };
 
 const attributeTopics = {
   2310001: {
     description: "Autorização do GPS", //(1: Autorizado 0: Não Autorizado)
-    unit: "null",
+    unit: "-",
     value: 1,
   },
   2102002: {
