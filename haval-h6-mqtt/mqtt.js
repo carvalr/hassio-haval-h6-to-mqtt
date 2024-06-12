@@ -40,7 +40,7 @@ const mqttModule = {
   },
   register(entityType, code, name, unit = null, device_class = "None") {
     const slugName = slugify(name.toLowerCase(), "_");
-    const topic = `homeassistant/${entityType.toLowerCase()}/haval_${VIN.toLowerCase()}_${code}/config`;
+    var topic = `homeassistant/${entityType.toLowerCase()}/haval_${VIN.toLowerCase()}_${code}/config`;
 
     let payload = {
       unique_id: `haval_${VIN.toLowerCase()}_${slugName}`,
