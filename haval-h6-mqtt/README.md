@@ -38,6 +38,7 @@ mqtt_user: nome_de_usuario_do_mqtt
 mqtt_pass: senha_do_mqtt
 refresh_minutes: 5
 pressure_unit: kPa [ou] psi
+device_tracker_enabled: true [ou] false
 ```
 
 ![Ajustes dos add-on](https://raw.githubusercontent.com/carvalr/hassio-haval-h6-to-mqtt/main/haval-h6-mqtt/images/addon_settings.png)
