@@ -109,11 +109,6 @@ const sensorTopics = {
     device_class: "cold",
     entity_type: "binary_sensor",
   },
-  2078020: {
-    description: "Filtragem do Ar do Cockpit", //(1: Ligado 0: Desligado)
-    device_class: "None",
-    entity_type: "sensor",
-  },
   2202099: {
     description: "Estado do Purificador de Ar",
     device_class: "None",
@@ -183,68 +178,73 @@ const attributeTopics = {
     value: 1,
   },
   2102002: {
-    description: "Estado da Pressão do Pneu Dianteiro Direito",
+    description: "Pressão do Pneu Dianteiro Direito",
     unit: "-",
     value: 0,
   },
   2102001: {
-    description: "Estado da Pressão do Pneu Dianteiro Esquerdo",
+    description: "Pressão do Pneu Dianteiro Esquerdo",
     unit: "-",
     value: 0,
   },
   2102004: {
-    description: "Estado da Pressão do Pneu Traseiro Direito",
+    description: "Pressão do Pneu Traseiro Direito",
     unit: "-",
     value: 0,
   },
   2102003: {
-    description: "Estado da Pressão do Pneu Traseiro Esquerdo",
+    description: "Pressão do Pneu Traseiro Esquerdo",
     unit: "-",
     value: 0,
   },
   2102008: {
-    description: "Estado da Temperatura do Pneu Dianteiro Direito",
+    description: "Temperatura do Pneu Dianteiro Direito",
     unit: "-",
     value: 0,
   },
   2102007: {
-    description: "Estado da Temperatura do Pneu Dianteiro Esquerdo",
+    description: "Temperatura do Pneu Dianteiro Esquerdo",
     unit: "-",
     value: 0,
   },
   2102010: {
-    description: "Estado da Temperatura do Pneu Traseiro Direito",
+    description: "Temperatura do Pneu Traseiro Direito",
     unit: "-",
     value: 0,
   },
   2102009: {
-    description: "Estado da Temperatura do Pneu Traseiro Esquerdo",
+    description: "Temperatura do Pneu Traseiro Esquerdo",
     unit: "-",
     value: 0,
   },
   2210010: {
-    description: "Estado de Aprendizado do Vidro Dianteiro Direito",
+    description: "Aprendizado do Vidro Dianteiro Direito",
     unit: "-",
     value: 1,
   },
   2210011: {
-    description: "Estado de Aprendizado do Vidro Dianteiro Esquerdo",
+    description: "Aprendizado do Vidro Dianteiro Esquerdo",
     unit: "-",
     value: 1,
   },
   2210012: {
-    description: "Estado de Aprendizado do Vidro Traseiro Direito",
+    description: "Aprendizado do Vidro Traseiro Direito",
     unit: "-",
     value: 1,
   },
   2210013: {
-    description: "Estado de Aprendizado do Vidro Traseiro Esquerdo",
+    description: "Aprendizado do Vidro Traseiro Esquerdo",
     unit: "-",
     value: 1,
   },
 };
 
 //const notUsedTopics = {
+  //2078020: {
+  //  description: "Filtragem do Ar do Cockpit", //(1: Ligado 0: Desligado)
+  //  device_class: "None",
+  //  entity_type: "sensor",
+  //},
   // 2204007: {
   //   description: "Estado do Farol", //(1: Ligado 0: Desligado)
   //   unit: "-",
