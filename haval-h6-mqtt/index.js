@@ -166,8 +166,8 @@ validationSchema.validate(process.env)
       storage.setItem('simIccid', data.simIccid);
       storage.setItem('imsi', data.imsi);
 
-      var desc = `${data.appShowSeriesName} ${data.powerType} - ${data.color} (${VIN})`;
-      register(EntityType.DEVICE_TRACKER, code = VIN, description = desc, unit = null, device_class = "None");
+      var desc = `${data.appShowSeriesName} ${data.powerType} - ${data.color}`;
+      register(EntityType.DEVICE_TRACKER, code = "None", description = desc, unit = null, device_class = "None");
       console.info('Device tracker registered')
     }
   })
