@@ -1,6 +1,9 @@
 # Changelog
 
-## 0.0.10.1
+## 0.0.10.2
+- MQTT icon handling
+
+## 0.0.10.2
 - Release candidate for version 0.0.10
 - Includes binary_sensors for doors
 
