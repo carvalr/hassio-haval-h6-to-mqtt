@@ -93,11 +93,11 @@ const getCarData = async () => {
 const registerEntities = async () => {
   console.info("Registering entities");
   Object.keys(sensorTopics).forEach((code) => {
-    var { description, unit, device_class, entity_type } = sensorTopics[code];
+    var { description, unit, device_class, entity_type, icon } = sensorTopics[code];
     if (device_class === "pressure" && PRESSURE_UNIT === "psi") {
       unit = "psi";
     }
-    register(EntityType[entity_type.toUpperCase()], code, description, unit, device_class);
+    register(EntityType[entity_type.toUpperCase()], code, description, unit, device_class, icon);
   });
 }
 

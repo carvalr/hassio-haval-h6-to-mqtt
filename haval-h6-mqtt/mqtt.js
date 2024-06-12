@@ -38,7 +38,7 @@ const mqttModule = {
       });
     });
   },
-  register(entityType, code, name, unit = null, device_class = "None") {
+  register(entityType, code, name, unit = null, device_class = "None", icon = null) {
     const slugName = slugify(name.toLowerCase(), "_");
     var topic = `homeassistant/${entityType.toLowerCase()}/haval_${VIN.toLowerCase()}_${code}/config`;
 
@@ -59,6 +59,9 @@ const mqttModule = {
         payload.payload_on = "1";
         payload.payload_off = "0";
       }
+
+      if(icon !== null)
+        payload.icon = icon;
     }
 
     if (entityType === EntityType.SENSOR && unit !== null && !["-", " ", "_"].includes(unit)) {
