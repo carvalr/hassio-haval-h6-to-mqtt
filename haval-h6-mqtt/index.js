@@ -136,27 +136,31 @@ validationSchema.validate(process.env)
         description: "Imagem do veículo",
         entity_type: EntityType.SENSOR,
         value: `${data.staticImageUrl}`,
+        icon: "mdi:image",
       },
       model: {
         description: "Model do veículo",
         entity_type: EntityType.SENSOR,
         value: `${data.appShowSeriesName} ${data.powerType}`,
+        icon: "mdi:car-estate",
       },
       color: {
         description: "Cor do veículo",
         entity_type: EntityType.SENSOR,
         value: `${data.color}`,
+        icon: "mdi:palette",
       },
       tankCapacity: {
         description: "Capacidade do tanque",
         entity_type: EntityType.SENSOR,
         value: `${String(data.tankCapacity)}`,
+        icon: "mdi:gas-station",
       },
     }
 
     Object.keys(staticEntities).forEach((code) => {
-      var { description, entity_type, value } = staticEntities[code];
-      register(entityType = entity_type, code = code, description = description, unit = null, device_class = "None");
+      var { description, entity_type, value, icon } = staticEntities[code];
+      register(entityType = entity_type, code = code, description = description, unit = null, device_class = "None", icon);
       sendMessage(code, value);
     });
 
