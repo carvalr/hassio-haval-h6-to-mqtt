@@ -133,25 +133,25 @@ validationSchema.validate(process.env)
     console.info("Registering static entities");
     const staticEntities = {
       image: {
-        description: "Imagem do veículo",
+        description: "Imagem do Veículo",
         entity_type: EntityType.SENSOR,
         value: `${data.staticImageUrl}`,
         icon: "mdi:image",
       },
       model: {
-        description: "Model do veículo",
+        description: "Modelo do Veículo",
         entity_type: EntityType.SENSOR,
         value: `${data.appShowSeriesName} ${data.powerType}`,
         icon: "mdi:car-estate",
       },
       color: {
-        description: "Cor do veículo",
+        description: "Cor do Veículo",
         entity_type: EntityType.SENSOR,
         value: `${data.color}`,
         icon: "mdi:palette",
       },
       tankCapacity: {
-        description: "Capacidade do tanque",
+        description: "Capacidade do Tanque",
         entity_type: EntityType.SENSOR,
         value: `${String(data.tankCapacity)}`,
         icon: "mdi:gas-station",
