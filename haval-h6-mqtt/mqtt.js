@@ -51,14 +51,13 @@ const mqttModule = {
     if(entityType === EntityType.IMAGE){
       payload.url_topic = `haval_${VIN.toLowerCase()}/${code}/state`;
     }
-    if ((entityType === EntityType.SENSOR || entityType === EntityType.BINARY_SENSOR) && device_class !== "None") {
-      payload.device_class = device_class;
+    if ((entityType === EntityType.SENSOR || entityType === EntityType.BINARY_SENSOR)) {
+      if(device_class !== "None") payload.device_class = device_class;
       payload.state_topic = `haval_${VIN.toLowerCase()}/${code}/state`;
     }
 
     if (entityType === EntityType.SENSOR && unit !== null && !["-", " ", "_"].includes(unit)) {
       payload.unit_of_measurement = unit;
-      payload.state_topic = `haval_${VIN.toLowerCase()}/${code}/state`;
     }
 
     if (entityType === EntityType.DEVICE_TRACKER) {

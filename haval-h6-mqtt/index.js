@@ -134,7 +134,7 @@ validationSchema.validate(process.env)
     const staticEntities = {
       image: {
         description: "Imagem do veículo",
-        entity_type: EntityType.IMAGE,
+        entity_type: EntityType.SENSOR,
         value: `${data.staticImageUrl}`,
       },
       model: {
