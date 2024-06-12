@@ -54,6 +54,11 @@ const mqttModule = {
     if ((entityType === EntityType.SENSOR || entityType === EntityType.BINARY_SENSOR)) {
       if(device_class !== "None") payload.device_class = device_class;
       payload.state_topic = `haval_${VIN.toLowerCase()}/${code}/state`;
+
+      if(entityType === EntityType.BINARY_SENSOR){
+        payload.payload_on = "1";
+        payload.payload_off = "0";
+      }
     }
 
     if (entityType === EntityType.SENSOR && unit !== null && !["-", " ", "_"].includes(unit)) {
