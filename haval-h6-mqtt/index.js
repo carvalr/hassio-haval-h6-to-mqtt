@@ -4,7 +4,7 @@ const fs = require("fs");
 
 const storage = require("./storage");
 const { sensorTopics, attributeTopics } = require("./map");
-const { mqttModule, EntityType } = require('./mqttModule');
+const { mqttModule, EntityType } = require('./mqtt');
 const { checkConnection, register, sendDeviceTrackerUpdate, sendMessage } = mqttModule;
 
 const validationSchema = require('./schema')
