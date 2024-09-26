@@ -66,7 +66,8 @@ Agora, você deve ser capaz de monitorar o seu veículo diretamente pelo painel 
 6. Na nova linha criada com o novo dashboard, clique em _ABRIR_.
 7. No canto superior esquerdo da tela, clique em _Editar dashboard_.
 8. Clique novamente no símbolo com 3 pontos verticais e depois em _Editor de configuração RAW_.
-5. Apague o conteúdo existente que será exibido, copie o conteúdo do arquivo `HomeAssistant_Dashboard_Haval.yaml` fornecido como template e cole nesta tela. [Baixe aqui o arquivo YAML](https://github.com/havaleiros/hassio-haval-h6-to-mqtt/blob/main/haval-h6-mqtt/files/HomeAssistant_Dashboard_Haval.yaml).
+9. Apague o conteúdo existente que será exibido, copie o conteúdo do arquivo `HomeAssistant_Dashboard_Haval.yaml` fornecido como template e cole nesta tela. [Baixe aqui o arquivo YAML](https://github.com/havaleiros/hassio-haval-h6-to-mqtt/blob/main/haval-h6-mqtt/files/HomeAssistant_Dashboard_Haval.yaml).
+10. Substitua todos os valores {chassis} pelo chassis de seu veículo.
 
 #### Adicionando Imagens do Veículo
 
@@ -100,6 +101,55 @@ Depois de instalar o HACS, siga as instruções específicas de cada card para a
 Agora, seu novo dashboard estará configurado para exibir informações detalhadas sobre o seu veículo GWM Haval H6.
 
 ![Exemplo de painel no Home Assistant](https://raw.githubusercontent.com/havaleiros/hassio-haval-h6-to-mqtt/main/haval-h6-mqtt/images/HomeAssistant_Example.png)
+
+#### Acionamento temporário do ar condicionado através de relógio inteligente
+
+Com a release 0.0.12 foi implementado o acionamento do ar condicionado.
+Este não foi adicionado ao dashboard de monitoramento, mas pode ser acionado via integração com o HA Companion.
+Neste documento será abordada a configuração para dispositivos iOS.
+
+### Adicionando "ios" e "AC Haval" no `configuration.yaml`
+
+Para integrar o controle do ar-condicionado do Haval H6 com o Home Assistant, siga os seguintes passos para configurar o `configuration.yaml`:
+
+1. **Adicionando o componente iOS:**
+O Home Assistant tem suporte para dispositivos iOS nativamente, permitindo que você receba notificações e execute automações através do seu iPhone ou iPad.
+
+No seu arquivo `configuration.yaml`, adicione as seguintes linhas para habilitar o suporte ao iOS:
+   
+```yaml
+ios:
+    actions:
+    - name: AC Haval
+    background_color: "#141717"
+    label:
+        text: "AC Haval"
+        color: "#FFFFFF"
+    icon:
+        icon: mdi:car-estate
+        color: "#FFFFFF"
+```
+2. **Configurando o "AC Haval"**
+Para integrar o controle do ar-condicionado do seu Haval H6, certifique-se de seguir as instruções de instalação deste repositório, e então adicione a automação ou entidade correspondente ao ar-condicionado no seu Home Assistant. Um exemplo de configuração do "AC Haval" pode ser feito com base nas informações que o MQTT está expondo no seu servidor.
+
+Exemplo de automação para controle do AC:
+```yaml
+automation:
+  - alias: "Acionamento temporário AC Haval"
+    initial_state: false
+    trigger:
+      - platform: event
+        event_type: ios.action_fired
+        event_data:
+          actionName: "AC Haval"
+    action:
+      - action: button.press
+        entity_id: button.haval_{chassis}_ativacao_do_ar_condicionado
+```
+### Configurando o Home Assistant Companion
+Após adicionar o componente ios no configuration.yaml, você poderá integrar o Home Assistant ao aplicativo companion no iOS para receber notificações e controlar o seu sistema remotamente.
+
+Para mais informações detalhadas sobre a instalação e configuração do aplicativo no iOS, consulte a página oficial do Home Assistant: [Documentação do Home Assistant Companion](https://companion.home-assistant.io).
 
 ## Suporte
 Para dúvidas, problemas ou sugestões, abra uma issue.
