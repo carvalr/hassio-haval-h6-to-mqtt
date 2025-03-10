@@ -1,45 +1,5 @@
 {
-    "en": {
-      "schema": {
-        "refresh_time": { 
-            "label": "Refresh Interval (seconds)",
-            "help": "Time interval for querying the API and updating data for entities created by this integration."
-        },
-        "haval_username": { 
-            "label": "myGWM App Username",
-            "help": "The email address used during registration."
-        },
-        "haval_password": { 
-            "label": "myGWM App Password"
-        },
-        "haval_vin": { 
-            "label": "Default Vehicle Chassis",
-            "help": "Check in the app or on the invoice."
-        },
-        "haval_pin": {
-            "label": "myGWM app PIN for commands",
-            "help": "PIN code used in the myGWM app to activate the command request like turning the air conditioner on."
-        },
-        "mqtt_server": { 
-            "label": "MQTT Server Address",
-            "help": "Address of your Home Assistant's MQTT server or external broker. Keep default if installed alongside Home Assistant as a service."
-        },
-        "mqtt_user": { 
-            "label": "MQTT Broker Username",
-            "help": "Username configured on your Home Assistant's MQTT server or external broker."
-        },
-        "mqtt_pass": { 
-            "label": "MQTT Broker Password",
-            "help": "Password configured on your Home Assistant's MQTT server or external broker."
-        },
-        "device_tracker_enabled": { 
-            "label": "Enable Device Tracker",
-            "help": "Registers vehicle positioning with tracking based on the configured interval."
-        }
-      }
-    },
-    "pt": {
-      "schema": {
+    "configuration": {
         "refresh_time": { 
             "label": "Intervalo de Atualização (segundos)",
             "help": "Tempo para consulta da API e atualização dos dados das entidades criadas por esta integração"
@@ -75,6 +35,5 @@
             "label": "Ativar o device tracker",
             "help": "Registrará o posicionamento do veículo com rastreamento com base no intervalo configurado."
         }
-      }
     }
-  }
+ }
